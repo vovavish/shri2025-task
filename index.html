@@ -10,8 +10,51 @@
       href="/src/assets/bg@2x.webp"
       type="image/webp"
     />
+    <script>
+      (function () {
+        let expanded = false;
+        let toggled = false;
+
+        window.toggleMenu = function () {
+          expanded = !expanded;
+          if (!toggled) toggled = true;
+
+          const menu = document.querySelector(".header__links");
+          const btn = document.querySelector(".header__menu");
+          const span = document.querySelector(".header__menu-text");
+
+          btn.setAttribute("aria-expanded", expanded);
+          span.textContent = expanded ? "Закрыть меню" : "Открыть меню";
+
+          menu.classList.toggle("header__links_opened", expanded);
+          menu.classList.toggle("header__links-toggled", toggled);
+        };
+      })();
+    </script>
   </head>
   <body>
+    <header class="header">
+      <a href="/" class="header__logo" aria-label="Яндекс.Дом"></a>
+      <button class="header__menu" aria-expanded="false" onclick="toggleMenu()">
+        <span class="header__menu-text a11y-hidden">Открыть меню</span>
+      </button>
+      <ul class="header__links">
+        <li class="header__item">
+          <a
+            class="header__link header__link_current"
+            href="/"
+            aria-current="page"
+            >Сводка</a
+          >
+        </li>
+        <li class="header__item">
+          <a class="header__link" href="/devices">Устройства</a>
+        </li>
+        <li class="header__item">
+          <a class="header__link" href="/scripts">Сценарии</a>
+        </li>
+      </ul>
+    </header>
     <div id="app"></div>
 
     <footer class="footer">

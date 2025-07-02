@@ -4,9 +4,4 @@ import { Main } from "./MainContent";
 import "./index.css";
 
 const root = createRoot(document.getElementById("app"));
-root.render(
-  <>
-    <Header />
-    <Main />
-  </>
-);
+root.render(<Main />);
