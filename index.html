@@ -1,38 +1,19 @@
-<!DOCTYPE html>
-<html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Яндекс.Дом</title>
-    <link
-      rel="preload"
-      as="image"
-      href="/shri2025-task/assets/bg@2x-iHF67ZIs.webp"
-      type="image/webp"
-    />
-    <script type="module" crossorigin src="/shri2025-task/assets/index-D3xS9NOf.js"></script>
-    <link rel="stylesheet" crossorigin href="/shri2025-task/assets/index-DfcCAd09.css">
-  </head>
-  <body>
-    <div id="app"></div>
+<!DOCTYPE html><html lang="ru"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Яндекс.Дом</title><link rel="preload" as="image" href="/shri2025-task/assets/bg@2x-iHF67ZIs.webp" type="image/webp"><script>(function () {
+        let expanded = false;
+        let toggled = false;
 
-    <footer class="footer">
-      <ul class="footer__list">
-        <li class="footer__item">
-          <a class="footer__link" href="/">Помощь</a>
-        </li>
-        <li class="footer__item">
-          <a class="footer__link" href="/">Обратная связь</a>
-        </li>
-        <li class="footer__item">
-          <a class="footer__link" href="/">Разработчикам</a>
-        </li>
-        <li class="footer__item">
-          <a class="footer__link" href="/">Условия использования</a>
-        </li>
-      </ul>
+        window.toggleMenu = function () {
+          expanded = !expanded;
+          if (!toggled) toggled = true;
 
-      <div class="footer__copyright">© 1997–2023 ООО «Яндекс»</div>
-    </footer>
-  </body>
-</html>
+          const menu = document.querySelector(".header__links");
+          const btn = document.querySelector(".header__menu");
+          const span = document.querySelector(".header__menu-text");
+
+          btn.setAttribute("aria-expanded", expanded);
+          span.textContent = expanded ? "Закрыть меню" : "Открыть меню";
+
+          menu.classList.toggle("header__links_opened", expanded);
+          menu.classList.toggle("header__links-toggled", toggled);
+        };
+      })();</script><script type="module" crossorigin src="/shri2025-task/assets/index-BxWHDZLJ.js"></script><link rel="stylesheet" crossorigin href="/shri2025-task/assets/index-DfcCAd09.css"></head><body><header class="header"><a href="/" class="header__logo" aria-label="Яндекс.Дом"></a><button class="header__menu" aria-expanded="false" onclick="toggleMenu()"><span class="header__menu-text a11y-hidden">Открыть меню</span></button><ul class="header__links"><li class="header__item"><a class="header__link header__link_current" href="/" aria-current="page">Сводка</a></li><li class="header__item"><a class="header__link" href="/devices">Устройства</a></li><li class="header__item"><a class="header__link" href="/scripts">Сценарии</a></li></ul></header><div id="app"></div><footer class="footer"><ul class="footer__list"><li class="footer__item"><a class="footer__link" href="/">Помощь</a></li><li class="footer__item"><a class="footer__link" href="/">Обратная связь</a></li><li class="footer__item"><a class="footer__link" href="/">Разработчикам</a></li><li class="footer__item"><a class="footer__link" href="/">Условия использования</a></li></ul><div class="footer__copyright">© 1997–2023 ООО «Яндекс»</div></footer></body></html>
